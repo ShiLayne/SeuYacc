@@ -19,6 +19,7 @@ public:
 	contextTb(vector<string> tokens);
 	conFreeGram get(int id);							//获取规约规则
 	vector<string> getTokenTbl();
+	vector<string> getExprTbl();
 	vector<string> getFisrt(string);
 	void insert(string R, string L);
 	void createFirstTb();

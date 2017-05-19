@@ -20,6 +20,11 @@ vector<string> contextTb::getTokenTbl()
 	return tokenTbl;
 }
 
+vector<string> contextTb::getExprTbl()
+{
+	return exprTbl;
+}
+
 vector<string> contextTb::getFisrt(string s)
 {
 	int re = judgeTorE(s);
@@ -31,17 +36,19 @@ vector<string> contextTb::getFisrt(string s)
 	return resu;
 }
 
-void contextTb::insert(string R, string L)
+void contextTb::insert(string L, string R)
 {
+	if (find(exprTbl.begin(), exprTbl.end(), L) == exprTbl.end())
+		exprTbl.push_back(L);
 	int Num = Table.size();
-	Table.push_back(conFreeGram(R, L, Num));
-	if (exprMap.count(R) > 0)
-		exprMap[R].push_back(Num);
+	Table.push_back(conFreeGram(L, R, Num));
+	if (exprMap.count(L) > 0)
+		exprMap[L].push_back(Num);
 	else
 	{
 		vector<int> N;
 		N.push_back(Num);
-		exprMap.insert(pair<string, vector<int>>(R, N));
+		exprMap.insert(pair<string, vector<int>>(L, N));
 	}
 }
 

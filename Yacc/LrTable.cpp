@@ -2,8 +2,7 @@
 
 LrTable::LrTable(contextTb conTb)
 {
-	tokens = conTb.getTokenTbl();
-	ExprTbl = conTb;
+	Tbl = conTb;
 	LRTbl.push_back(LrState(conTb.S, conTb));
 	map<string, int> jumpM;
 	int maxID = 1;
@@ -39,4 +38,14 @@ LrTable::LrTable(contextTb conTb)
 void LrTable::createActGoto()
 {
 
+}
+
+vector<string> LrTable::getToken()
+{
+	return Tbl.getTokenTbl();
+}
+
+vector<string> LrTable::getExpr()
+{
+	return Tbl.getExprTbl();
 }

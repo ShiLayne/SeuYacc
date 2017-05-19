@@ -11,7 +11,7 @@ LrState::LrState(LrState s, string input, contextTb tb)
 		{
 			Follow.push_back(s.Follow[i]);
 			context.push_back(s.context[num[i]]);
-			Dot.push_back(s.Dot[num[i]]);
+			Dot.push_back(s.Dot[num[i]]+1);
 			extend.push_back(s.extend[num[i]]);
 		}
 		int size = 0;
