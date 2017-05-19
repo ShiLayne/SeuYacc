@@ -111,6 +111,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="conFreeGram.h" />
+    <ClInclude Include="contextTb.h" />
+    <ClInclude Include="LrState.h" />
+    <ClInclude Include="LrTable.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="conFreeGram.cpp" />
+    <ClCompile Include="contextTb.cpp" />
+    <ClCompile Include="LrState.cpp" />
+    <ClCompile Include="LrTable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

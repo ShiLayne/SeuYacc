@@ -14,4 +14,32 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="conFreeGram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LrState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="contextTb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LrTable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="conFreeGram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="contextTb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LrState.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LrTable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
