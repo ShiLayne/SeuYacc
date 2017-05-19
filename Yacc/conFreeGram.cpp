@@ -32,6 +32,11 @@ vector<string> conFreeGram::getRight()
 	return right;
 }
 
+int conFreeGram::getNumber()
+{
+	return Number;
+}
+
 bool conFreeGram::operator==(const conFreeGram &x)
 {
 	if (x.Number == Number)

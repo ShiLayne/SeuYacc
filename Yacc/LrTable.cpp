@@ -37,7 +37,21 @@ LrTable::LrTable(contextTb conTb)
 
 void LrTable::createActGoto()
 {
-
+	map<string, pair<int, int>> newMap;
+	for (int i = 0; i < jumpMap.size(); i++)
+	{
+		newMap.clear();
+		map<string, int>::iterator it = jumpMap[i].begin();
+		for(;it!=jumpMap[i].end();it++)						//移入
+			newMap.insert(pair<string, pair<int, int>>(it->first, pair<int, int>(0, it->second)));
+		for(int j=0;j<LRTbl[i].size();j++)					//LR i 的第 j 条规则,如果点在最后一个前面
+			if(LRTbl[i].ifEnd(j))										//规约
+				newMap.insert(pair<string, pair<int, int>>(*(LRTbl[i].context[j].getRight().end()-1), 
+					pair<int, int>(1, LRTbl[i].context[j].getNumber())));
+		if (LRTbl[i].ifEnd(0) && Tbl.S == LRTbl[i].context)	//文法已经经过预处理 S->S'
+			newMap.insert(pair<string, pair<int, int>>(terminal, pair<int, int>(2, 0)));
+		ActGoto_Tbl.push_back(newMap);
+	}
 }
 
 vector<string> LrTable::getToken()

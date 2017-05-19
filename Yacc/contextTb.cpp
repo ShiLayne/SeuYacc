@@ -1,5 +1,36 @@
 #include "contextTb.h"
 #include <iostream>
+#include <algorithm>
+
+vector<string> contextTb::getFirst4Update(string s)
+{
+	vector<int> Num;
+	vector<string> result;
+	if (judgeTorE(s))//如果是Expr
+		if (exprMap.count(s) > 0)
+		{
+			Num = exprMap[s];
+			for (int i = 0; i < Num.size(); i++)
+			{
+				string FirstRight = Table[Num[i]].getRight()[0];
+				if (FirstRight != Table[Num[i]].getLeft())
+				{
+					vector<string> newR, insertR;
+					if (FirstMap.count(FirstRight) > 0)
+						insertR = FirstMap[FirstRight];
+					else
+						insertR = getFirst4Update(FirstRight);
+					set_union(newR.begin(), newR.end(), result.begin(), result.end(), back_inserter(newR));
+					sort(newR.begin(), newR.end());
+					result = newR;
+				}
+			}
+		}
+		else;
+	else//如果是token
+		result.push_back(s);
+	return result;
+}
 
 contextTb::contextTb()
 {
@@ -34,6 +65,11 @@ vector<string> contextTb::getFisrt(string s)
 	else if (re == 1)
 		resu = FirstMap[s];
 	return resu;
+}
+
+void contextTb::updateFirstMap()
+{
+
 }
 
 void contextTb::insert(string L, string R)

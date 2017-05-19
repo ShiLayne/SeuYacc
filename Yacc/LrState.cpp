@@ -120,6 +120,24 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 	updateNext(tb);
 }
 
+int LrState::size()
+{
+	return context.size();
+}
+
+int LrState::ContextSize(int id)
+{
+	return context[id].getRight().size();
+}
+
+int LrState::ifEnd(int id)
+{
+	if (ContextSize(id) == Dot[id])
+		return 1;
+	else
+		return 0;
+}
+
 void LrState::
 updateFollow(vector<string> s, int pos)
 {
