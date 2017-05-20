@@ -6,7 +6,8 @@ vector<string> contextTb::getFirst4Update(string s)
 {
 	vector<int> Num;
 	vector<string> result;
-	if (judgeTorE(s))//如果是Expr
+	if (judgeTorE(s)==1)//如果是Expr
+	{
 		if (exprMap.count(s) > 0)
 		{
 			Num = exprMap[s];
@@ -20,13 +21,15 @@ vector<string> contextTb::getFirst4Update(string s)
 						insertR = FirstMap[FirstRight];
 					else
 						insertR = getFirst4Update(FirstRight);
-					set_union(newR.begin(), newR.end(), result.begin(), result.end(), back_inserter(newR));
+					set_union(insertR.begin(), insertR.end(), result.begin(), result.end(), back_inserter(newR));
 					sort(newR.begin(), newR.end());
 					result = newR;
 				}
 			}
+			//更新FIrstMap
+			FirstMap.insert(pair<string, vector<string>>(s, result));
 		}
-		else;
+	}
 	else//如果是token
 		result.push_back(s);
 	return result;
@@ -69,7 +72,9 @@ vector<string> contextTb::getFisrt(string s)
 
 void contextTb::updateFirstMap()
 {
-
+	FirstMap.clear();
+	for (int i = 0; i < exprTbl.size(); i++)
+		getFirst4Update(exprTbl[i]);
 }
 
 void contextTb::insert(string L, string R)

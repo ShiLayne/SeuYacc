@@ -53,7 +53,6 @@ LrState::LrState(LrState s, string input, contextTb tb)
 			}
 		}
 		updateNext(tb);
-
 	}
 	else
 	{
@@ -181,14 +180,14 @@ void LrState::updateNext(contextTb tb)
 	}
 }
 
-bool LrState::operator==(const LrState &x)
+bool operator==(const LrState &l, const LrState &r)
 {
-	if (context.size() != x.context.size())
+	if (l.context.size() != r.context.size())
 		return false;
 	bool flag = true;
-	for (int i = 0; i <min( context.size(),x.context.size()); i++)
+	for (int i = 0; i <min( l.context.size(),r.context.size()); i++)
 	{
-		if (Dot[i] == x.Dot[i] && context[i] == x.context[i] );
+		if (l.Dot[i] == r.Dot[i] && l.context[i] == r.context[i] );
 		else
 		{
 			flag = false;
@@ -197,9 +196,9 @@ bool LrState::operator==(const LrState &x)
 	}
 	if (flag)
 	{
-		for (int i = 0; i < Dot.size(); i++)
+		for (int i = 0; i < l.Dot.size(); i++)
 		{
-			if (Follow[i] == x.Follow[i]);
+			if (l.Follow[i] == r.Follow[i]);
 			else
 			{
 				flag = false;

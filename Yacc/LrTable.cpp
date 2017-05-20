@@ -17,11 +17,11 @@ LrTable::LrTable(contextTb conTb)
 			LrState newState(LRTbl[i], currS, conTb);
 			for (int k = 0; k < LRTbl.size(); k++)
 			{
-				if (LRTbl[k] == newState)
+				/*if (LRTbl[k] == newState)
 				{
 					position = k;//存在重复项就把指针指向当前位置
 					break;
-				}
+				}*/
 			}
 			if (position >= 0)//存在重复项
 				jumpM.insert(pair<string, int>(currS, position));

@@ -1,4 +1,4 @@
-#pragma
+#pragma once
 #include <vector>
 #include <string>
 using namespace std;
@@ -12,11 +12,12 @@ private:
 	string left;
 	vector<string> right;
 public:
+	conFreeGram();
 	conFreeGram(string readL, string readR,int Num);
 	string getLeft();										//获取左侧
 	vector<string> getRight();						//获取右侧
 	int getNumber();									//获取编号
-	bool operator==(const conFreeGram&);
-	bool operator<(const conFreeGram&);
-	bool operator>(const conFreeGram&);
+	friend bool operator==(const conFreeGram&, const conFreeGram&);
+	friend bool operator<(const conFreeGram&, const conFreeGram&);
+	friend bool operator>(const conFreeGram&, const conFreeGram&);
 };

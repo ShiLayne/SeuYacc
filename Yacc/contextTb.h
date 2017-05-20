@@ -2,7 +2,7 @@
 #include <map>
 #include "conFreeGram.h"
 /*
-用于存储整张规约表
+用于存储整张语法表
 */
 class contextTb
 {
@@ -11,7 +11,7 @@ private:
 	vector<string> tokenTbl;						//记录所有的token
 	vector<string> exprTbl;							//记录所有expression
 private:
-	vector<string> getFirst4Update(string);					//更新FirstMap时使用的getFirst
+	vector<string> getFirst4Update(string);	//更新FirstMap时使用的getFirst
 public:
 	vector<conFreeGram>			S;				//文法最高层
 	map<string, vector<int>>		exprMap;	//string在Left的表达式序号集合
@@ -24,7 +24,7 @@ public:
 	vector<string> getExprTbl();
 	vector<string> getFisrt(string);				//FirstMap外部接口
 	void updateFirstMap();
-	void insert(string R, string L);
+	void insert(string L, string R);
 	void createFirstTb();
 	int	 judgeTorE(string s);							//判断是Token(返还0)还是Expression(返还1),error(-1)
 };

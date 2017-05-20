@@ -10,7 +10,7 @@ conFreeGram::conFreeGram(string readL, string readR,int Num)
 	int size = 0, start = 0;
 	for (int i = 0; i < readR.length(); i++)
 	{
-		if (readR[i] == ' ')
+		if (readR[i] == ' '|| readR[i] == '/0')
 		{
 			if(size!=0)
 				right.push_back(readR.substr(start, size));
@@ -37,26 +37,17 @@ int conFreeGram::getNumber()
 	return Number;
 }
 
-bool conFreeGram::operator==(const conFreeGram &x)
+bool operator==(const conFreeGram &l, const conFreeGram &r)
 {
-	if (x.Number == Number)
-		return true;
-	else
-		return false;
+	return l.Number==r.Number;
 }
 
-bool conFreeGram::operator<(const conFreeGram &x)
+bool operator<(const conFreeGram &l, const conFreeGram &r)
 {
-	if (x.Number < Number)
-		return true;
-	else
-		return false;
+	return  l.Number < r.Number;
 }
 
-bool conFreeGram::operator>(const conFreeGram &x)
+bool operator>(const conFreeGram &l, const conFreeGram &r)
 {
-	if (x.Number > Number)
-		return true;
-	else
-		return false;
+	return  l.Number > r.Number;
 }
