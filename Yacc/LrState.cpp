@@ -25,11 +25,33 @@ LrState::LrState(LrState s, string input, contextTb tb)
 				if (extend[i] == 0&& context[i].getRight().size()>Dot[i])
 				{
 					string Left = context[i].getRight()[Dot[i]];				//Left是当前Dot后的字符串
-					vector<string> follow;
-					if (context[i].getRight().size() - 1 > Dot[i])				//如果后面还有字符串的话，得到后面字符的First
-						follow = tb.getFisrt(context[i].getRight()[Dot[i] + 1]);
-					else																		//如果后面没有字符串的话，follow就是整个规则的Follow
-						follow = Follow[i];
+					vector<string> follow, insertF, newF;
+					bool EmptyFlag = true;
+					for (int j = Dot[i] + 1; j < context[i].getRight().size(); j++)
+					{
+						newF.clear();
+						insertF = tb.getFisrt(context[i].getRight()[j]);
+						set_union(insertF.begin(), insertF.end(), follow.begin(), follow.end(), back_inserter(newF));
+						sort(newF.begin(), newF.end());
+						follow = newF;
+						if (find(insertF.begin(), insertF.end(), epsilon) == insertF.end())
+						{
+							vector<string>::iterator it = find(follow.begin(), follow.end(), epsilon);
+							if (it != follow.end())
+								follow.erase(it);
+							EmptyFlag = true;
+							break;
+						}
+						EmptyFlag = false;
+					}
+					if (EmptyFlag)
+					{
+						newF.clear();
+						insertF = Follow[i];
+						set_union(insertF.begin(), insertF.end(), follow.begin(), follow.end(), back_inserter(newF));
+						sort(newF.begin(), newF.end());
+						follow = newF;
+					}
 					//如果Left不是token，是非终结符的话
 					if (tb.judgeTorE(Left) == 1)
 					{
@@ -103,7 +125,8 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 			{
 				string Left = context[i].getRight()[Dot[i]];
 				vector<string> follow,insertF,newF;
-				for (int j = Dot[i]+1; j < context[i].getRight().size(); j++)
+				bool EmptyFlag = true;
+				for (int j = Dot[i] + 1; j < context[i].getRight().size(); j++)
 				{
 					newF.clear();
 					insertF = tb.getFisrt(context[i].getRight()[j]);
@@ -113,10 +136,20 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 					if (find(insertF.begin(), insertF.end(), epsilon) == insertF.end())
 					{
 						vector<string>::iterator it = find(follow.begin(), follow.end(), epsilon);
-						if(it!= follow.end())
+						if (it != follow.end())
 							follow.erase(it);
+						EmptyFlag = true;
 						break;
 					}
+					EmptyFlag = false;
+				}
+				if (EmptyFlag)
+				{
+					newF.clear();
+					insertF = Follow[i];
+					set_union(insertF.begin(), insertF.end(), follow.begin(), follow.end(), back_inserter(newF));
+					sort(newF.begin(), newF.end());
+					follow = newF;
 				}
 				/*if (context[i].getRight().size() - 1 > Dot[i])
 					follow = tb.getFisrt(context[i].getRight()[Dot[i] + 1]);

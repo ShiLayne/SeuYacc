@@ -7,6 +7,7 @@ int main()
 	tokens.push_back("else");
 	tokens.push_back("a");
 	tokens.push_back(";");
+	tokens.push_back("");
 	contextTb Tbl(tokens);
 	Tbl.insert("program", "declarations");
 	Tbl.insert("declarations", "if	declarations	else	declarations");

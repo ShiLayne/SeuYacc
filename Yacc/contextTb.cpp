@@ -14,7 +14,7 @@ vector<string> contextTb::getFirst4Update(string s)
 			for (int i = 0; i < Num.size(); i++)
 			{
 				bool emptyFlag;
-				if (Table[Num[i]].getRight().size() == 0)//如果右边是epsilon
+				if (Table[Num[i]].getRight().size() == 1&& Table[Num[i]].getRight()[0]=="")//如果右边是epsilon
 				{
 					vector<string> newR, insertR;
 					insertR.push_back(epsilon);
@@ -168,12 +168,12 @@ int contextTb::judgeTorE(string s)
 {
 	if (find(tokenTbl.begin(), tokenTbl.end(), s) != tokenTbl.end())
 		return 0;
-	else if (find(exprTbl.begin(), exprTbl.end(), s) != exprTbl.end())
-		return 1;
 	else
+		return 1;
+	/*else
 	{
-		/*最终验证完成可删除此段和上面的find 加快运行速度*/
+		//最终验证完成可删除此段和上面的find 加快运行速度
 		std::cout << "error in judgeTorE for input " << s << endl;
 		return -1;
-	}
+	}*/
 }

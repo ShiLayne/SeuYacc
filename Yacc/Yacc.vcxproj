@@ -121,7 +121,7 @@
     <ClCompile Include="contextTb.cpp" />
     <ClCompile Include="LrState.cpp" />
     <ClCompile Include="LrTable.cpp" />
-    <ClCompile Include="mian.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
