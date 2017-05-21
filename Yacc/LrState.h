@@ -2,7 +2,6 @@
 #include "contextTb.h"
 #include "conFreeGram.h"
 #include<map>
-const string terminal = "$";
 class LrState
 {
 private:

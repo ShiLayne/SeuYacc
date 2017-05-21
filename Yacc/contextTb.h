@@ -1,6 +1,8 @@
 #pragma once
 #include <map>
 #include "conFreeGram.h"
+const string terminal = "$";
+const string epsilon = "";
 /*
 用于存储整张语法表
 */

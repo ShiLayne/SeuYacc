@@ -102,11 +102,26 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 			if (extend[i] == 0)
 			{
 				string Left = context[i].getRight()[Dot[i]];
-				vector<string> follow;
-				if (context[i].getRight().size() - 1 > Dot[i])
+				vector<string> follow,insertF,newF;
+				for (int j = Dot[i]+1; j < context[i].getRight().size(); j++)
+				{
+					newF.clear();
+					insertF = tb.getFisrt(context[i].getRight()[j]);
+					set_union(insertF.begin(), insertF.end(), follow.begin(), follow.end(), back_inserter(newF));
+					sort(newF.begin(), newF.end());
+					follow = newF;
+					if (find(insertF.begin(), insertF.end(), epsilon) == insertF.end())
+					{
+						vector<string>::iterator it = find(follow.begin(), follow.end(), epsilon);
+						if(it!= follow.end())
+							follow.erase(it);
+						break;
+					}
+				}
+				/*if (context[i].getRight().size() - 1 > Dot[i])
 					follow = tb.getFisrt(context[i].getRight()[Dot[i] + 1]);
 				else
-					follow.push_back(terminal);
+					follow.push_back(terminal);*/
 				//如果不是token
 				if (tb.judgeTorE(Left) == 1)
 				{

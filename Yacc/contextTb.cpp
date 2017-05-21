@@ -13,18 +13,53 @@ vector<string> contextTb::getFirst4Update(string s)
 			Num = exprMap[s];
 			for (int i = 0; i < Num.size(); i++)
 			{
-				string FirstRight = Table[Num[i]].getRight()[0];
-				if (FirstRight != Table[Num[i]].getLeft())
+				bool emptyFlag;
+				if (Table[Num[i]].getRight().size() == 0)//如果右边是epsilon
 				{
 					vector<string> newR, insertR;
-					if (FirstMap.count(FirstRight) > 0)
-						insertR = FirstMap[FirstRight];
-					else
-						insertR = getFirst4Update(FirstRight);
+					insertR.push_back(epsilon);
 					set_union(insertR.begin(), insertR.end(), result.begin(), result.end(), back_inserter(newR));
 					sort(newR.begin(), newR.end());
 					result = newR;
 				}
+				for (int j = 0; j < Table[Num[i]].getRight().size(); j++)
+				{
+					string FirstRight = Table[Num[i]].getRight()[j];
+					if (FirstRight != Table[Num[i]].getLeft())
+					{
+						vector<string> newR, insertR;
+						if (FirstMap.count(FirstRight) > 0)
+							insertR = FirstMap[FirstRight];
+						else
+							insertR = getFirst4Update(FirstRight);
+						set_union(insertR.begin(), insertR.end(), result.begin(), result.end(), back_inserter(newR));
+						sort(newR.begin(), newR.end());
+						result = newR;
+
+						emptyFlag = false;//判断First中是否有epsilon，如果有就不在找下一个
+						if (exprMap.count(FirstRight) > 0)
+						{
+							vector<int> ptSet = exprMap[FirstRight];
+							for (int k = 0; k < ptSet.size(); k++)
+								if (get(ptSet[k]).getRight().size() == 0)
+								{
+									emptyFlag = true;
+									break;
+								}
+						}
+						if (emptyFlag)
+							break;
+					}
+					if ((j == Table[Num[i]].getRight().size()-1) && emptyFlag)
+					{
+						vector<string> newR,insertR;
+						insertR.push_back(epsilon);
+						set_union(insertR.begin(), insertR.end(), result.begin(), result.end(), back_inserter(newR));
+						sort(newR.begin(), newR.end());
+						result = newR;
+					}
+				}
+
 			}
 			//更新FIrstMap
 			FirstMap.insert(pair<string, vector<string>>(s, result));
