@@ -1,5 +1,6 @@
 #include "LrState.h"
 #include <algorithm>
+#include <numeric>
 #include <iostream>
 
 LrState::LrState(LrState s, string input, contextTb tb)
@@ -9,47 +10,65 @@ LrState::LrState(LrState s, string input, contextTb tb)
 		vector<int> num = s.contextNext[input];
 		for (int i = 0; i < num.size(); i++)
 		{
-			Follow.push_back(s.Follow[i]);
+			Follow.push_back(s.Follow[num[i]]);
 			context.push_back(s.context[num[i]]);
 			Dot.push_back(s.Dot[num[i]]+1);
-			extend.push_back(s.extend[num[i]]);
+			extend.push_back(0);
 		}
-		int size = 0;
 		//此处做闭包扩展处理
-		while (size != context.size())
+		int size = 0;
+		while ((size != context.size()) || accumulate(extend.begin(), extend.end(), 0) < extend.size())
 		{
 			size = context.size();
 			for (int i = 0; i < context.size(); i++)
 			{
-				if (extend[i]==0)
+				if (extend[i] == 0&& context[i].getRight().size()>Dot[i])
 				{
-					string Left = context[i].getRight()[Dot[i]];
-					vector<string> follow = tb.getFisrt( context[i].getRight()[Dot[i] + 1]);
-					//如果不是token
-					if (tb.judgeTorE(Left)==1)
+					string Left = context[i].getRight()[Dot[i]];				//Left是当前Dot后的字符串
+					vector<string> follow;
+					if (context[i].getRight().size() - 1 > Dot[i])				//如果后面还有字符串的话，得到后面字符的First
+						follow = tb.getFisrt(context[i].getRight()[Dot[i] + 1]);
+					else																		//如果后面没有字符串的话，follow就是整个规则的Follow
+						follow = Follow[i];
+					//如果Left不是token，是非终结符的话
+					if (tb.judgeTorE(Left) == 1)
 					{
-						vector<int> TblNum = tb.exprMap[Left];
-						for (int j = 0; j < TblNum.size(); i++)
+						vector<int> TblNum = tb.exprMap[Left];				//获得Left对应的所有规则
+						for (int j = 0; j < TblNum.size(); j++)					//对Left的第j条规则
 						{
-							for (int k = 0; k < context.size(); k++)
+							bool flag = true;												//代表是否对获得的规则进行了操作
+							for (int k = 0; k < context.size(); k++)			//核对当前状态内是否有相同的转化规则，并按照Number插入到对应位置
 							{
 								if (tb.get(TblNum[j]) > context[k])
 									continue;
 								else if (tb.get(TblNum[j]) == context[k] && Dot[k] == 0)//对重复二次扩展的合并
+								{
+									flag = false;
 									updateFollow(follow, k);
-								else if(tb.get(TblNum[j]) < context[k])
+									break;
+								}
+								else if (tb.get(TblNum[j]) < context[k])
 								{
 									i++;
+									flag = false;
 									Follow.insert(Follow.begin() + k, follow);
-									context.insert(context.begin()+k,tb.get(TblNum[j]));
+									context.insert(context.begin() + k, tb.get(TblNum[j]));
 									Dot.insert(Dot.begin() + k, 0);
 									extend.insert(extend.begin() + k, 0);
+									break;
 								}
+							}
+							if (flag)//还没操作，插入到最后
+							{
+								Follow.push_back(follow);
+								context.push_back(tb.get(TblNum[j]));
+								Dot.push_back(0);
+								extend.push_back(0);
 							}
 						}
 					}
-					extend[i] = 1;
 				}
+				extend[i] = 1;
 			}
 		}
 		updateNext(tb);
@@ -66,14 +85,9 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 	context = con;
 	for (int i = 0; i < context.size(); i++)
 	{
-		if (con[i].getRight().size() > 1)
-			Follow.push_back(tb.getFisrt(con[i].getRight()[1]));
-		else
-		{
-			vector<string> s;
-			s.push_back(terminal);
-			Follow.push_back((s));
-		}
+		vector<string> s;
+		s.push_back(terminal);
+		Follow.push_back((s));
 		Dot.push_back(0);
 		extend.push_back(0);
 	}
@@ -88,26 +102,37 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 			if (extend[i] == 0)
 			{
 				string Left = context[i].getRight()[Dot[i]];
-				vector<string> follow = tb.getFisrt(context[i].getRight()[Dot[i] + 1]);
+				vector<string> follow;
+				if (context[i].getRight().size() - 1 > Dot[i])
+					follow = tb.getFisrt(context[i].getRight()[Dot[i] + 1]);
+				else
+					follow.push_back(terminal);
 				//如果不是token
 				if (tb.judgeTorE(Left) == 1)
 				{
 					vector<int> TblNum = tb.exprMap[Left];
-					for (int j = 0; j < TblNum.size(); i++)
+					for (int j = 0; j < TblNum.size(); j++)
 					{
 						for (int k = 0; k < context.size(); k++)
 						{
-							if (tb.get(TblNum[j]) > context[k])
+							if (tb.get(TblNum[j]) > context[k]&&k!= context.size()-1)
 								continue;
 							else if (tb.get(TblNum[j]) == context[k] && Dot[k] == 0)//对重复二次扩展的合并
-								updateFollow(follow, k);
-							else if (tb.get(TblNum[j]) < context[k])
 							{
-								i++;
+								updateFollow(follow, k);
+								break;
+							}
+							else if (tb.get(TblNum[j]) < context[k]|| k == context.size() - 1)
+							{
+								if (k == context.size() - 1)
+									k++;
+								else
+									i++;
 								Follow.insert(Follow.begin() + k, follow);
 								context.insert(context.begin() + k, tb.get(TblNum[j]));
 								Dot.insert(Dot.begin() + k, 0);
 								extend.insert(extend.begin() + k, 0);
+								break;
 							}
 						}
 					}
@@ -131,7 +156,7 @@ int LrState::ContextSize(int id)
 
 int LrState::ifEnd(int id)
 {
-	if (ContextSize(id) == Dot[id])
+	if (ContextSize(id) <=	Dot[id])
 		return 1;
 	else
 		return 0;
@@ -155,14 +180,7 @@ void LrState::updateNext(contextTb tb)
 		if (Dot[i] < context[i].getRight().size())
 		{//LrState内第i个规则点后面的string
 			string currString = context[i].getRight()[Dot[i]];
-			//如果是expr
-			if (tb.judgeTorE(currString) == 1)
-			{
-				slist = tb.FirstMap[currString];
-			}
-			//如果是token
-			else
-				slist.push_back(currString);
+			slist.push_back(currString);
 		}
 		for (int j = 0; j < slist.size(); j++)
 		{
@@ -196,7 +214,7 @@ bool operator==(const LrState &l, const LrState &r)
 	}
 	if (flag)
 	{
-		for (int i = 0; i < l.Dot.size(); i++)
+		for (int i = 0; i < l.Follow.size(); i++)
 		{
 			if (l.Follow[i] == r.Follow[i]);
 			else

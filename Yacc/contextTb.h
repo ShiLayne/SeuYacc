@@ -24,7 +24,7 @@ public:
 	vector<string> getExprTbl();
 	vector<string> getFisrt(string);				//FirstMap外部接口
 	void updateFirstMap();
-	void insert(string L, string R);
+	void insert(string L, string R);					//插入的第一个为文法最高层
 	void createFirstTb();
 	int	 judgeTorE(string s);							//判断是Token(返还0)还是Expression(返还1),error(-1)
 };

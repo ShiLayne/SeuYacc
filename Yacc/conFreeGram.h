@@ -20,4 +20,5 @@ public:
 	friend bool operator==(const conFreeGram&, const conFreeGram&);
 	friend bool operator<(const conFreeGram&, const conFreeGram&);
 	friend bool operator>(const conFreeGram&, const conFreeGram&);
+	friend ostream &operator<<(ostream &out,const conFreeGram& con);
 };

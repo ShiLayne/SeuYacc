@@ -70,6 +70,7 @@ vector<string> contextTb::getFisrt(string s)
 	return resu;
 }
 
+
 void contextTb::updateFirstMap()
 {
 	FirstMap.clear();
@@ -91,6 +92,8 @@ void contextTb::insert(string L, string R)
 		N.push_back(Num);
 		exprMap.insert(pair<string, vector<int>>(L, N));
 	}
+	if (Table.size() == 1)
+		S.push_back(Table[0]);
 }
 
 void contextTb::createFirstTb()
