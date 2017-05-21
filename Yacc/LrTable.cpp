@@ -69,6 +69,18 @@ void LrTable::createActGoto()
 
 bool LrTable::handleConflict(int i, string s)
 {
+	pair<int, int> x1, x2;
+	x1 = Tbl.getAssociation(i);
+	x2 = Tbl.getAssociation(s);
+	if (x1.first != x2.first)
+	{
+		cout << "context " << i << "  and  string " << s << "  cannot be compared"<<endl;
+		return true;
+	}
+	if (x1.first == 2)//左结合
+		return x1 > x2 ? true : (x1 == x2 ? true:false);
+	else if (x1.first == 1)//不结合
+		return x1 > x2 ? true : false;
 	return true;
 }
 

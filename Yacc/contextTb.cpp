@@ -100,6 +100,35 @@ void contextTb::createFirstTb()
 {
 }
 
+pair<int, int> contextTb::getAssociation(string s)
+{
+	if (nonAsso.count(s) > 0)
+		return pair<int, int>(1, nonAsso[s]);
+	else if (leftAsso.count(s) > 0)
+		return pair<int, int>(2, nonAsso[s]);
+	else
+		return pair<int, int>(0, 0);
+}
+
+pair<int, int> contextTb::getAssociation(int id)
+{
+	map<string, int>::iterator it;
+	vector<string> target = get(id).getRight();
+	for (it = nonAsso.begin(); it != nonAsso.end(); it++)
+	{
+		for (int i = 0; i < target.size(); i++)
+			if ((it->first) == target[i])
+				return pair<int,int>(1, it->second);
+	}
+	for (it = leftAsso.begin(); it != leftAsso.end(); it++)
+	{
+		for (int i = 0; i < target.size(); i++)
+			if ((it->first) == target[i])
+				return pair<int, int>(2, it->second);
+	}
+	return pair<int, int>(0,0);
+}
+
 int contextTb::judgeTorE(string s)
 {
 	if (find(tokenTbl.begin(), tokenTbl.end(), s) != tokenTbl.end())

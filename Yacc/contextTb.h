@@ -10,6 +10,8 @@ private:
 	vector<conFreeGram> Table;					//记录所有表达式规则
 	vector<string> tokenTbl;						//记录所有的token
 	vector<string> exprTbl;							//记录所有expression
+	map<string, int>			nonAsso;
+	map<string, int>			leftAsso;
 private:
 	vector<string> getFirst4Update(string);	//更新FirstMap时使用的getFirst
 public:
@@ -26,5 +28,7 @@ public:
 	void updateFirstMap();
 	void insert(string L, string R);					//插入的第一个为文法最高层
 	void createFirstTb();
+	pair<int, int> getAssociation(string s);		//不结合<1，优先级>		左结合<2,优先级>
+	pair<int, int> getAssociation(int id);
 	int	 judgeTorE(string s);							//判断是Token(返还0)还是Expression(返还1),error(-1)
 };
