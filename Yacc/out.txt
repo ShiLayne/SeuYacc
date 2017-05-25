@@ -1,258 +1,3776 @@
 State:  0
 0	$  
-S -> E	
-0	$  and  or  
-E -> E	and	E	
-0	$  and  or  
-E -> E	or	E	
-0	$  and  or  
-E -> not	E	
-0	$  and  or  
-E -> LPAR	E	RPAR	
-0	$  and  or  
-E -> b	
+program -> declarations	
+0	$  
+declarations -> declaration	declarations	
+0	$  
+declarations -> 
+0	  $  FLOAT  INT  STRUCT  
+declaration -> fun_declaration	
+0	  $  FLOAT  INT  STRUCT  
+declaration -> var_declaration	
+0	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
+0	  $  FLOAT  INT  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
 
 
 
 State:  1
 1	$  
-S -> E	
-1	$  and  or  
-E -> E	and	E	
-1	$  and  or  
-E -> E	or	E	
+program -> declarations	
 
 
 
 State:  2
-0	$  and  or  
-E -> E	and	E	
-0	$  and  or  
-E -> E	or	E	
-1	$  and  or  
-E -> not	E	
-0	$  and  or  
-E -> not	E	
-0	$  and  or  
-E -> LPAR	E	RPAR	
-0	$  and  or  
-E -> b	
+1	$  
+declarations -> declaration	declarations	
+0	$  
+declarations -> declaration	declarations	
+0	$  
+declarations -> 
+0	  $  FLOAT  INT  STRUCT  
+declaration -> fun_declaration	
+0	  $  FLOAT  INT  STRUCT  
+declaration -> var_declaration	
+0	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
+0	  $  FLOAT  INT  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
 
 
 
 State:  3
-0	RPAR  and  or  
-E -> E	and	E	
-0	RPAR  and  or  
-E -> E	or	E	
-0	RPAR  and  or  
-E -> not	E	
-1	$  and  or  
-E -> LPAR	E	RPAR	
-0	RPAR  and  or  
-E -> LPAR	E	RPAR	
-0	RPAR  and  or  
-E -> b	
+1	  $  FLOAT  INT  STRUCT  
+declaration -> fun_declaration	
 
 
 
 State:  4
-1	$  and  or  
-E -> b	
+1	  $  FLOAT  INT  STRUCT  
+declaration -> var_declaration	
 
 
 
 State:  5
-2	$  and  or  
-E -> E	and	E	
-0	$  and  or  
-E -> E	and	E	
-0	$  and  or  
-E -> E	or	E	
-0	$  and  or  
-E -> not	E	
-0	$  and  or  
-E -> LPAR	E	RPAR	
-0	$  and  or  
-E -> b	
+1	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
+1	  $  FLOAT  INT  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+1	NAME  TIMES  
+type -> type	TIMES	
 
 
 
 State:  6
-0	$  and  or  
-E -> E	and	E	
-2	$  and  or  
-E -> E	or	E	
-0	$  and  or  
-E -> E	or	E	
-0	$  and  or  
-E -> not	E	
-0	$  and  or  
-E -> LPAR	E	RPAR	
-0	$  and  or  
-E -> b	
+1	NAME  TIMES  
+type -> INT	
 
 
 
 State:  7
-1	$  and  or  
-E -> E	and	E	
-1	$  and  or  
-E -> E	or	E	
-2	$  and  or  
-E -> not	E	
+1	NAME  TIMES  
+type -> FLOAT	
 
 
 
 State:  8
-1	RPAR  and  or  
-E -> E	and	E	
-1	RPAR  and  or  
-E -> E	or	E	
-2	$  and  or  
-E -> LPAR	E	RPAR	
+1	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
 
 
 
 State:  9
-0	RPAR  and  or  
-E -> E	and	E	
-0	RPAR  and  or  
-E -> E	or	E	
-1	RPAR  and  or  
-E -> not	E	
-0	RPAR  and  or  
-E -> not	E	
-0	RPAR  and  or  
-E -> LPAR	E	RPAR	
-0	RPAR  and  or  
-E -> b	
+2	$  
+declarations -> declaration	declarations	
 
 
 
 State:  10
-0	RPAR  and  or  
-E -> E	and	E	
-0	RPAR  and  or  
-E -> E	or	E	
-0	RPAR  and  or  
-E -> not	E	
-1	RPAR  and  or  
-E -> LPAR	E	RPAR	
-0	RPAR  and  or  
-E -> LPAR	E	RPAR	
-0	RPAR  and  or  
-E -> b	
+2	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
+2	  $  FLOAT  INT  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
 
 
 
 State:  11
-1	RPAR  and  or  
-E -> b	
+2	NAME  TIMES  
+type -> type	TIMES	
 
 
 
 State:  12
-3	$  and  or  
-E -> E	and	E	
-1	$  and  or  
-E -> E	and	E	
-1	$  and  or  
-E -> E	or	E	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+2	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+0	RBRACE  
+fields -> field	fields	
+0	RBRACE  
+fields -> 
+0	  FLOAT  INT  RBRACE  STRUCT  
+field -> type	NAME	SEMICOLON	
 
 
 
 State:  13
-1	$  and  or  
-E -> E	and	E	
-3	$  and  or  
-E -> E	or	E	
-1	$  and  or  
-E -> E	or	E	
+3	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
+0	RPAR  
+parameters -> more_parameters	
+0	RPAR  
+parameters -> 
+0	RPAR  
+more_parameters -> parameter	COMMA	more_parameters	
+0	RPAR  
+more_parameters -> parameter	
+0	COMMA  RPAR  
+parameter -> type	NAME	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
 
 
 
 State:  14
-2	RPAR  and  or  
-E -> E	and	E	
-0	RPAR  and  or  
-E -> E	and	E	
-0	RPAR  and  or  
-E -> E	or	E	
-0	RPAR  and  or  
-E -> not	E	
-0	RPAR  and  or  
-E -> LPAR	E	RPAR	
-0	RPAR  and  or  
-E -> b	
+3	  $  FLOAT  INT  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
 
 
 
 State:  15
-0	RPAR  and  or  
-E -> E	and	E	
-2	RPAR  and  or  
-E -> E	or	E	
-0	RPAR  and  or  
-E -> E	or	E	
-0	RPAR  and  or  
-E -> not	E	
-0	RPAR  and  or  
-E -> LPAR	E	RPAR	
-0	RPAR  and  or  
-E -> b	
+1	NAME  TIMES  
+type -> type	TIMES	
+1	  FLOAT  INT  RBRACE  STRUCT  
+field -> type	NAME	SEMICOLON	
 
 
 
 State:  16
-3	$  and  or  
-E -> LPAR	E	RPAR	
+3	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
 
 
 
 State:  17
-1	RPAR  and  or  
-E -> E	and	E	
-1	RPAR  and  or  
-E -> E	or	E	
-2	RPAR  and  or  
-E -> not	E	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+1	RBRACE  
+fields -> field	fields	
+0	RBRACE  
+fields -> field	fields	
+0	RBRACE  
+fields -> 
+0	  FLOAT  INT  RBRACE  STRUCT  
+field -> type	NAME	SEMICOLON	
 
 
 
 State:  18
-1	RPAR  and  or  
-E -> E	and	E	
-1	RPAR  and  or  
-E -> E	or	E	
-2	RPAR  and  or  
-E -> LPAR	E	RPAR	
+4	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
 
 
 
 State:  19
-3	RPAR  and  or  
-E -> E	and	E	
-1	RPAR  and  or  
-E -> E	and	E	
-1	RPAR  and  or  
-E -> E	or	E	
+1	RPAR  
+parameters -> more_parameters	
 
 
 
 State:  20
-1	RPAR  and  or  
-E -> E	and	E	
-3	RPAR  and  or  
-E -> E	or	E	
-1	RPAR  and  or  
-E -> E	or	E	
+1	RPAR  
+more_parameters -> parameter	COMMA	more_parameters	
+1	RPAR  
+more_parameters -> parameter	
 
 
 
 State:  21
-3	RPAR  and  or  
-E -> LPAR	E	RPAR	
+1	COMMA  RPAR  
+parameter -> type	NAME	
+1	NAME  TIMES  
+type -> type	TIMES	
+
+
+
+State:  22
+2	  FLOAT  INT  RBRACE  STRUCT  
+field -> type	NAME	SEMICOLON	
+
+
+
+State:  23
+4	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+
+
+
+State:  24
+2	RBRACE  
+fields -> field	fields	
+
+
+
+State:  25
+5	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
+0	  $  FLOAT  INT  STRUCT  
+block -> LBRACE	var_declarations	statements	RBRACE	
+
+
+
+State:  26
+2	RPAR  
+more_parameters -> parameter	COMMA	more_parameters	
+0	RPAR  
+more_parameters -> parameter	COMMA	more_parameters	
+0	RPAR  
+more_parameters -> parameter	
+0	COMMA  RPAR  
+parameter -> type	NAME	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+
+
+
+State:  27
+2	COMMA  RPAR  
+parameter -> type	NAME	
+
+
+
+State:  28
+3	  FLOAT  INT  RBRACE  STRUCT  
+field -> type	NAME	SEMICOLON	
+
+
+
+State:  29
+6	  $  FLOAT  INT  STRUCT  
+fun_declaration -> type	NAME	LPAR	parameters	RPAR	block	
+
+
+
+State:  30
+1	  $  FLOAT  INT  STRUCT  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> var_declaration	var_declarations	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> 
+0	  FLOAT  IF  INT  LBRACE  NAME  RBRACE  RETURN  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+
+
+
+State:  31
+3	RPAR  
+more_parameters -> parameter	COMMA	more_parameters	
+
+
+
+State:  32
+2	  $  FLOAT  INT  STRUCT  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	RBRACE  
+statements -> statement	SEMICOLON	statements	
+0	RBRACE  
+statements -> 
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+0	SEMICOLON  
+statement -> RETURN	exp	
+0	SEMICOLON  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  33
+1	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> var_declaration	var_declarations	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> var_declaration	var_declarations	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> 
+0	  FLOAT  IF  INT  LBRACE  NAME  RBRACE  RETURN  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+
+
+
+State:  34
+1	  FLOAT  IF  INT  LBRACE  NAME  RBRACE  RETURN  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+1	NAME  TIMES  
+type -> type	TIMES	
+
+
+
+State:  35
+3	  $  FLOAT  INT  STRUCT  
+block -> LBRACE	var_declarations	statements	RBRACE	
+
+
+
+State:  36
+1	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> var_declaration	var_declarations	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> 
+0	  FLOAT  IF  INT  LBRACE  NAME  RBRACE  RETURN  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+
+
+
+State:  37
+1	RBRACE  
+statements -> statement	SEMICOLON	statements	
+
+
+
+State:  38
+1	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+1	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+
+
+
+State:  39
+1	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+1	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+1	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+
+
+
+State:  40
+1	SEMICOLON  
+statement -> RETURN	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  41
+1	SEMICOLON  
+statement -> block	
+
+
+
+State:  42
+1	ASSIGN  DOT  LBRACK  
+lexp -> var	
+
+
+
+State:  43
+1	ASSIGN  
+var -> NAME	
+
+
+
+State:  44
+2	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> var_declaration	var_declarations	
+
+
+
+State:  45
+2	  FLOAT  IF  INT  LBRACE  NAME  RBRACE  RETURN  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+
+
+
+State:  46
+4	  $  FLOAT  INT  STRUCT  
+block -> LBRACE	var_declarations	statements	RBRACE	
+
+
+
+State:  47
+2	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	RBRACE  
+statements -> statement	SEMICOLON	statements	
+0	RBRACE  
+statements -> 
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+0	SEMICOLON  
+statement -> RETURN	exp	
+0	SEMICOLON  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  48
+0	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+2	RBRACE  
+statements -> statement	SEMICOLON	statements	
+0	RBRACE  
+statements -> statement	SEMICOLON	statements	
+0	RBRACE  
+statements -> 
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+0	SEMICOLON  
+statement -> RETURN	exp	
+0	SEMICOLON  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  49
+2	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+2	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  50
+2	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  51
+2	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  52
+2	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+
+
+
+State:  53
+2	SEMICOLON  
+statement -> RETURN	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  54
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+var -> NAME	
+
+
+
+State:  55
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  56
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+
+
+
+State:  57
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+
+
+
+State:  58
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  59
+3	  FLOAT  IF  INT  LBRACE  NAME  RBRACE  RETURN  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+
+
+
+State:  60
+3	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+
+
+
+State:  61
+3	RBRACE  
+statements -> statement	SEMICOLON	statements	
+
+
+
+State:  62
+3	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+3	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  63
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+var -> NAME	
+
+
+
+State:  64
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  65
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+
+
+
+State:  66
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+
+
+
+State:  67
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  68
+3	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  69
+3	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  70
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+var -> NAME	
+
+
+
+State:  71
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  72
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+
+
+
+State:  73
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+
+
+
+State:  74
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  75
+3	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+
+
+
+State:  76
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  77
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  78
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  79
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  80
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  81
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  82
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+var -> NAME	
+
+
+
+State:  83
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  84
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+1	RPAR  
+var -> NAME	
+
+
+
+State:  85
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  86
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+exps -> exp 	
+0	RPAR  
+exps -> exp	COMMA	exps	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  87
+4	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+
+
+
+State:  88
+0	ELSE  
+block -> LBRACE	var_declarations	statements	RBRACE	
+4	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+0	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+4	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	ELSE  
+statement -> lexp	ASSIGN	exp	
+0	ELSE  
+statement -> RETURN	exp	
+0	ELSE  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  89
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  90
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  91
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  92
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  93
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  94
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  95
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  96
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  97
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  98
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+exps -> exp 	
+0	RPAR  
+exps -> exp	COMMA	exps	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  99
+4	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+
+
+
+State:  100
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  101
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  102
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  103
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  104
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  105
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  106
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  107
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  108
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  109
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+2	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+exps -> exp 	
+0	RPAR  
+exps -> exp	COMMA	exps	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  110
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  111
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  112
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+1	DIVIDE  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  113
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  114
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  115
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  116
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  117
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	DIVIDE	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  118
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  119
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  120
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+1	RPAR  
+exps -> exp	COMMA	exps	
+
+
+
+State:  121
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+var -> NAME	
+
+
+
+State:  122
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  123
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+
+
+
+State:  124
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+
+
+
+State:  125
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	RPAR	
+
+
+
+State:  126
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  127
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  128
+1	RPAR  
+exps -> exp 	
+
+
+
+State:  129
+1	ELSE  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> var_declaration	var_declarations	
+0	IF  LBRACE  NAME  RBRACE  RETURN  
+var_declarations -> 
+0	  FLOAT  IF  INT  LBRACE  NAME  RBRACE  RETURN  STRUCT  
+var_declaration -> type	NAME	SEMICOLON	
+0	NAME  TIMES  
+type -> INT	
+0	NAME  TIMES  
+type -> FLOAT	
+0	NAME  TIMES  
+type -> type	TIMES	
+0	NAME  TIMES  
+type -> STRUCT	LBRACE	fields	RBRACE	
+
+
+
+State:  130
+5	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+5	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+
+
+
+State:  131
+1	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+1	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+
+
+
+State:  132
+1	ELSE  
+statement -> lexp	ASSIGN	exp	
+1	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+1	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+
+
+
+State:  133
+1	ELSE  
+statement -> RETURN	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  134
+1	ELSE  
+statement -> block	
+
+
+
+State:  135
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  136
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  137
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  138
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  139
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  140
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  141
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  142
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  143
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  144
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+
+
+
+State:  145
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  146
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  147
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  148
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  149
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  150
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  151
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  152
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  153
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  154
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  155
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+
+
+
+State:  156
+3	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  157
+4	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+
+
+
+State:  158
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  159
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  160
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  161
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  162
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  163
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  164
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  165
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+exps -> exp 	
+2	RPAR  
+exps -> exp	COMMA	exps	
+0	RPAR  
+exps -> exp	COMMA	exps	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  166
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  167
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  168
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+2	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+exps -> exp 	
+0	RPAR  
+exps -> exp	COMMA	exps	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  169
+4	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  SEMICOLON  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  170
+2	ELSE  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	RBRACE  
+statements -> statement	SEMICOLON	statements	
+0	RBRACE  
+statements -> 
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+0	SEMICOLON  
+statement -> RETURN	exp	
+0	SEMICOLON  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  171
+6	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+
+
+
+State:  172
+0	SEMICOLON  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+6	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	SEMICOLON  
+statement -> lexp	ASSIGN	exp	
+0	SEMICOLON  
+statement -> RETURN	exp	
+0	SEMICOLON  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  173
+2	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+2	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+var -> NAME	
+
+
+
+State:  174
+2	ELSE  
+statement -> lexp	ASSIGN	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  175
+2	ELSE  
+statement -> RETURN	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  176
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+var -> NAME	
+
+
+
+State:  177
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  178
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+
+
+
+State:  179
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+
+
+
+State:  180
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  181
+4	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+
+
+
+State:  182
+4	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  183
+4	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+
+
+
+State:  184
+4	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  185
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  186
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  187
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  188
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  189
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  190
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  191
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+1	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  192
+3	RPAR  
+exps -> exp	COMMA	exps	
+
+
+
+State:  193
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  194
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  195
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+
+
+
+State:  196
+3	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  197
+3	ELSE  
+block -> LBRACE	var_declarations	statements	RBRACE	
+
+
+
+State:  198
+7	SEMICOLON  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+
+
+
+State:  199
+3	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+3	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  200
+3	ELSE  
+statement -> lexp	ASSIGN	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  201
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  202
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> var	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+var -> NAME	
+
+
+
+State:  203
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  204
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  205
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  206
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  207
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  208
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RPAR  TIMES  
+exp -> exp	EQUAL	exp	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  209
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  210
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> var	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NUMBER	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+2	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+0	RPAR  
+exps -> exp 	
+0	RPAR  
+exps -> exp	COMMA	exps	
+0	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+var -> NAME	
+
+
+
+State:  211
+4	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+
+
+
+State:  212
+4	COMMA  DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  213
+4	ELSE  
+block -> LBRACE	var_declarations	statements	RBRACE	
+
+
+
+State:  214
+0	ELSE  
+block -> LBRACE	var_declarations	statements	RBRACE	
+4	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+0	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+4	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	ELSE  
+statement -> lexp	ASSIGN	exp	
+0	ELSE  
+statement -> RETURN	exp	
+0	ELSE  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  215
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+
+
+
+State:  216
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DOT	NAME	
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  EQUAL  LBRACK  MINUS  PLUS  RBRACK  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  217
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  218
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  219
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  220
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  221
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DOT	NAME	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	PLUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	MINUS	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	TIMES	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	DIVIDE	exp	
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+1	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	EQUAL	exp	
+
+
+
+State:  222
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> LPAR	exp	RPAR	
+
+
+
+State:  223
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> MINUS	exp 	%prec UMINUS	
+
+
+
+State:  224
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	RPAR	
+
+
+
+State:  225
+3	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  226
+5	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+5	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+
+
+
+State:  227
+4	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> exp	LBRACK	exp	RBRACK	
+
+
+
+State:  228
+4	DIVIDE  DOT  ELSE  EQUAL  LBRACK  MINUS  PLUS  TIMES  
+exp -> NAME	LPAR	exps	RPAR	
+
+
+
+State:  229
+6	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+
+
+
+State:  230
+0	ELSE  
+block -> LBRACE	var_declarations	statements	RBRACE	
+0	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	%prec LOW	
+6	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
+0	ELSE  
+statement -> lexp	ASSIGN	exp	
+0	ELSE  
+statement -> RETURN	exp	
+0	ELSE  
+statement -> block	
+0	ASSIGN  DOT  LBRACK  
+lexp -> var	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	LBRACK	exp	RBRACK	
+0	ASSIGN  DOT  LBRACK  
+lexp -> lexp	DOT	NAME	
+0	ASSIGN  
+var -> NAME	
+
+
+
+State:  231
+7	ELSE  
+statement -> IF	LPAR	exp	RPAR	statement	ELSE	statement	
 
 
 

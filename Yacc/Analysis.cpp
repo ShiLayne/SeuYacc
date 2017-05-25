@@ -43,6 +43,9 @@ void Analysis::output()
 	ofile << "\tint flag = 1;\n";
 	ofile << "\tint point = 0;\n";
 	ofile << "\tstring str = \"\";\n\n";
+
+	ofile << "\tstring str1 = \"#\";\n";
+	ofile << "\tstring str2 = \"0\";\n";
 	ofile << "\twhile (flag)\n";
 	ofile << "\t{\n";
 	ofile << "\t\tpopstate = state.top();\n";
@@ -64,11 +67,14 @@ void Analysis::output()
 			{
 				if (((iter->second).first == 0)&&istoken(iter->first))           //表示移进
 				{
-					const char *A1 = (iter->first).c_str();
+					string A1 = (iter->first);
 					ofile << "\t\t\tif (str == \"" << A1 << "\")\n";
 					ofile << "\t\t\t{\n";
 					ofile << "\t\t\t\tstate.push(" << (iter->second).second << ");\n";
 					ofile << "\t\t\t\tsymbol.push(\"" << A1 << "\");\n";
+					ofile << "\t\t\t\tstr1 += \" " << A1 << "\";\n";
+					ofile << "\t\t\t\tstr2 += \" " << (iter->second).second << "\";\n";
+					ofile << "\t\t\t\tcout<<\"Symbol Stack: \"<<str1<<endl<<\"State Stack : \"<<str2<<endl<<\"shift\"<<endl;\n";
 					ofile << "\t\t\t\tpoint++;\n";
 					ofile << "\t\t\t\tbreak;\n";
 					ofile << "\t\t\t}\n";
@@ -81,15 +87,28 @@ void Analysis::output()
 					ofile << "\t\t\t\tint n = " << Tbl.get((iter->second).second).getRight().size() << ";\n";
 					ofile << "\t\t\t\tfor(int i = 0;i < n;i++)\n";
 					ofile << "\t\t\t\t{\n";
+					ofile << "\t\t\t\t\tstring str11 = symbol.top();\n";
+					ofile << "\t\t\t\t\tint str22 = state.top();\n";
 					ofile << "\t\t\t\t\tstate.pop();\n";
 					ofile << "\t\t\t\t\tsymbol.pop();\n";
+					ofile << "\t\t\t\t\tstr1 = str1.substr(0,str1.length()-str11.length()-1);\n";
+					ofile << "\t\t\t\t\tstr2 = str2.substr(0,str2.length()-len(str22)-1);\n";
 					ofile << "\t\t\t\t}\n";
 					string B = (Tbl.get((iter->second).second).getLeft());
 					ofile << "\t\t\t\tsymbol.push(\"" << B<< "\");\n";
+					ofile << "\t\t\t\tstr1 += \" " << B << "\";\n";
 					ofile << "\t\t\t\tpopstate = state.top();\n";
 					ofile << "\t\t\t\tif(nextstate(popstate,\"" << B << "\") != -1)\n";
 					ofile << "\t\t\t\t{\n";
 					ofile << "\t\t\t\t\tstate.push(nextstate(popstate,\"" << B << "\"));\n";
+					ofile << "\t\t\t\t\tstr2 += \" \";\n";
+					ofile << "\t\t\t\t\tstr2 += to_string(nextstate(popstate,\"" << B << "\"));\n";
+					ofile << "\t\t\t\t\tcout<<\"Symbol Stack: \"<<str1<<endl<<\"State Stack : \"<<str2<<endl<<\"reduct：\"<<\"" << B<<"\"<<\"->\"<<\"";
+					for (int k = 0; k < (Tbl.get((iter->second).second).getRight()).size(); k++)
+					{
+						ofile << (Tbl.get((iter->second).second).getRight())[k];
+					}
+					ofile << "\"<<endl;\n";
 					ofile << "\t\t\t\t}\n";
 					ofile << "\t\t\t\telse\n";
 					ofile << "\t\t\t\t{\n";
@@ -100,10 +119,29 @@ void Analysis::output()
 				}
 				if (((iter->second).first == 2) && istoken(iter->first))              //表示正确
 				{
-					const char *A3 = (iter->first).c_str();
+					string A3 = (iter->first);
 					ofile << "\t\t\tif (str == \"" << A3 << "\")\n";
 					ofile << "\t\t\t{\n";
 					ofile << "\t\t\t\tflag = 0;\n";
+
+					ofile << "\t\t\t\tint n = " << Tbl.get((iter->second).second).getRight().size() << ";\n";
+					ofile << "\t\t\t\tfor(int i = 0;i < n;i++)\n";
+					ofile << "\t\t\t\t{\n";
+					ofile << "\t\t\t\t\tstring str11 = symbol.top();\n";
+					ofile << "\t\t\t\t\tint str22 = state.top();\n";
+					ofile << "\t\t\t\t\tstate.pop();\n";
+					ofile << "\t\t\t\t\tsymbol.pop();\n";
+					ofile << "\t\t\t\t\tstr1 = str1.substr(0,str1.length()-str11.length()-1);\n";
+					ofile << "\t\t\t\t\tstr2 = str2.substr(0,str2.length()-len(str22)-1);\n";
+					ofile << "\t\t\t\t}\n";
+					string C = (Tbl.get((iter->second).second).getLeft());
+					ofile << "\t\t\t\tcout<<\"Symbol Stack: \"<<str1<<endl<<\"State Stack  : \"<<str2<<endl<<\"reduct：\"<<\"" << C << "\"<<\"->\"<<\"";
+					for (int k = 0; k < (Tbl.get((iter->second).second).getRight()).size(); k++)
+					{
+						ofile << (Tbl.get((iter->second).second).getRight())[k];
+					}
+					ofile << "\"<<endl;\n";
+
 					ofile << "\t\t\t\treturn \"success\";\n";
 					ofile << "\t\t\t}\n";
 				}

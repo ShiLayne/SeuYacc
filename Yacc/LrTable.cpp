@@ -89,11 +89,13 @@ void LrTable::createActGoto()
 					else
 						newMap.insert(pair<string, pair<int, int>>(LRTbl[i].Follow[j][k], pair<int, int>(1, LRTbl[i].context[j].getNumber())));
 			}
-		if (LRTbl[i].ifEnd(0) && Tbl.S == LRTbl[i].context)	//文法已经经过预处理 S->S'
+		if (LRTbl[i].ifEnd(0) && Tbl.S[0] == LRTbl[i].context[0])
+		{
 			if (newMap.count(terminal) == 0)
 				newMap.insert(pair<string, pair<int, int>>(terminal, pair<int, int>(2, 0)));
 			else
 				newMap[terminal] = pair<int, int>(2, 0);
+		}
 		ActGoto_Tbl.push_back(newMap);
 	}
 }

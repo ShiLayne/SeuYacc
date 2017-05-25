@@ -27,10 +27,10 @@
     <ClInclude Include="LrTable.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Analysis.h">
+    <ClInclude Include="InputFileProcess.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="InputFileProcess.h">
+    <ClInclude Include="Analysis.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,13 +47,13 @@
     <ClCompile Include="LrTable.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Analysis.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SeuYacc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="InputFileProcess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Analysis.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

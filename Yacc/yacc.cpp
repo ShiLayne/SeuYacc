@@ -31,15 +31,3 @@ union	{	char*		name;
 	SYM_INFO*	sym;
 	SYM_LIST*	slist;
 	}
-
-int
-main(int argc,char *argv[])
-{
-if (argc!=2) {
-	fprintf(stderr,"Usage: %s base_file_name",argv[0]);
-	exit(1);
-	}
-base = argv[1];
-return yyparse();
-}
-ÿ

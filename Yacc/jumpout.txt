@@ -1,30 +1,32 @@
 State:   0
-E    1
-LPAR    3
-b    4
-not    2
+FLOAT    7
+INT    6
+STRUCT    8
+declaration    2
+declarations    1
+fun_declaration    3
+type    5
+var_declaration    4
 
 
 
 State:   1
-and    5
-or    6
 
 
 
 State:   2
-E    7
-LPAR    3
-b    4
-not    2
+FLOAT    7
+INT    6
+STRUCT    8
+declaration    2
+declarations    9
+fun_declaration    3
+type    5
+var_declaration    4
 
 
 
 State:   3
-E    8
-LPAR    10
-b    11
-not    9
 
 
 
@@ -33,47 +35,31 @@ State:   4
 
 
 State:   5
-E    12
-LPAR    3
-b    4
-not    2
+NAME    10
+TIMES    11
 
 
 
 State:   6
-E    13
-LPAR    3
-b    4
-not    2
 
 
 
 State:   7
-and    5
-or    6
 
 
 
 State:   8
-RPAR    16
-and    14
-or    15
+LBRACE    12
 
 
 
 State:   9
-E    17
-LPAR    10
-b    11
-not    9
 
 
 
 State:   10
-E    18
-LPAR    10
-b    11
-not    9
+LPAR    13
+SEMICOLON    14
 
 
 
@@ -82,63 +68,1676 @@ State:   11
 
 
 State:   12
-and    5
-or    6
+FLOAT    7
+INT    6
+STRUCT    8
+field    17
+fields    16
+type    15
 
 
 
 State:   13
-and    5
-or    6
+FLOAT    7
+INT    6
+STRUCT    8
+more_parameters    19
+parameter    20
+parameters    18
+type    21
 
 
 
 State:   14
-E    19
-LPAR    10
-b    11
-not    9
 
 
 
 State:   15
-E    20
-LPAR    10
-b    11
-not    9
+NAME    22
+TIMES    11
 
 
 
 State:   16
+RBRACE    23
 
 
 
 State:   17
-and    14
-or    15
+FLOAT    7
+INT    6
+STRUCT    8
+field    17
+fields    24
+type    15
 
 
 
 State:   18
-RPAR    21
-and    14
-or    15
+RPAR    25
 
 
 
 State:   19
-and    14
-or    15
 
 
 
 State:   20
-and    14
-or    15
+COMMA    26
 
 
 
 State:   21
+NAME    27
+TIMES    11
+
+
+
+State:   22
+SEMICOLON    28
+
+
+
+State:   23
+
+
+
+State:   24
+
+
+
+State:   25
+LBRACE    30
+block    29
+
+
+
+State:   26
+FLOAT    7
+INT    6
+STRUCT    8
+more_parameters    31
+parameter    20
+type    21
+
+
+
+State:   27
+
+
+
+State:   28
+
+
+
+State:   29
+
+
+
+State:   30
+FLOAT    7
+INT    6
+STRUCT    8
+type    34
+var_declaration    33
+var_declarations    32
+
+
+
+State:   31
+
+
+
+State:   32
+IF    38
+LBRACE    36
+NAME    43
+RETURN    40
+block    41
+lexp    39
+statement    37
+statements    35
+var    42
+
+
+
+State:   33
+FLOAT    7
+INT    6
+STRUCT    8
+type    34
+var_declaration    33
+var_declarations    44
+
+
+
+State:   34
+NAME    45
+TIMES    11
+
+
+
+State:   35
+RBRACE    46
+
+
+
+State:   36
+FLOAT    7
+INT    6
+STRUCT    8
+type    34
+var_declaration    33
+var_declarations    47
+
+
+
+State:   37
+SEMICOLON    48
+
+
+
+State:   38
+LPAR    49
+
+
+
+State:   39
+ASSIGN    50
+DOT    52
+LBRACK    51
+
+
+
+State:   40
+LPAR    54
+MINUS    55
+NAME    58
+NUMBER    57
+exp    53
+var    56
+
+
+
+State:   41
+
+
+
+State:   42
+
+
+
+State:   43
+
+
+
+State:   44
+
+
+
+State:   45
+SEMICOLON    59
+
+
+
+State:   46
+
+
+
+State:   47
+IF    38
+LBRACE    36
+NAME    43
+RETURN    40
+block    41
+lexp    39
+statement    37
+statements    60
+var    42
+
+
+
+State:   48
+IF    38
+LBRACE    36
+NAME    43
+RETURN    40
+block    41
+lexp    39
+statement    37
+statements    61
+var    42
+
+
+
+State:   49
+LPAR    63
+MINUS    64
+NAME    67
+NUMBER    66
+exp    62
+var    65
+
+
+
+State:   50
+LPAR    54
+MINUS    55
+NAME    58
+NUMBER    57
+exp    68
+var    56
+
+
+
+State:   51
+LPAR    70
+MINUS    71
+NAME    74
+NUMBER    73
+exp    69
+var    72
+
+
+
+State:   52
+NAME    75
+
+
+
+State:   53
+DIVIDE    81
+DOT    76
+EQUAL    82
+LBRACK    77
+MINUS    79
+PLUS    78
+TIMES    80
+
+
+
+State:   54
+LPAR    63
+MINUS    64
+NAME    84
+NUMBER    66
+exp    83
+var    65
+
+
+
+State:   55
+exp     85
+
+
+
+State:   56
+
+
+
+State:   57
+
+
+
+State:   58
+LPAR    86
+
+
+
+State:   59
+
+
+
+State:   60
+RBRACE    87
+
+
+
+State:   61
+
+
+
+State:   62
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+RPAR    88
+TIMES    93
+
+
+
+State:   63
+LPAR    63
+MINUS    64
+NAME    84
+NUMBER    66
+exp    96
+var    65
+
+
+
+State:   64
+exp     97
+
+
+
+State:   65
+
+
+
+State:   66
+
+
+
+State:   67
+LPAR    98
+
+
+
+State:   68
+DIVIDE    81
+DOT    76
+EQUAL    82
+LBRACK    77
+MINUS    79
+PLUS    78
+TIMES    80
+
+
+
+State:   69
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+RBRACK    99
+TIMES    104
+
+
+
+State:   70
+LPAR    63
+MINUS    64
+NAME    84
+NUMBER    66
+exp    107
+var    65
+
+
+
+State:   71
+exp     108
+
+
+
+State:   72
+
+
+
+State:   73
+
+
+
+State:   74
+LPAR    109
+
+
+
+State:   75
+
+
+
+State:   76
+NAME    110
+
+
+
+State:   77
+LPAR    70
+MINUS    71
+NAME    112
+NUMBER    73
+exp    111
+var    72
+
+
+
+State:   78
+LPAR    54
+MINUS    55
+NAME    58
+NUMBER    57
+exp    113
+var    56
+
+
+
+State:   79
+LPAR    54
+MINUS    55
+NAME    58
+NUMBER    57
+exp    114
+var    56
+
+
+
+State:   80
+LPAR    54
+MINUS    55
+NAME    58
+NUMBER    57
+exp    115
+var    56
+
+
+
+State:   81
+LPAR    54
+MINUS    55
+NAME    58
+NUMBER    57
+exp    116
+var    56
+
+
+
+State:   82
+LPAR    54
+MINUS    55
+NAME    58
+NUMBER    57
+exp    117
+var    56
+
+
+
+State:   83
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+RPAR    118
+TIMES    93
+
+
+
+State:   84
+LPAR    98
+
+
+
+State:   85
+%prec UMINUS    119
+
+
+
+State:   86
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+RPAR    125
+exp    120
+exp     128
+exps    127
+var    123
+
+
+
+State:   87
+
+
+
+State:   88
+IF    131
+LBRACE    129
+NAME    43
+RETURN    133
+block    134
+lexp    132
+statement    130
+var    42
+
+
+
+State:   89
+NAME    135
+
+
+
+State:   90
+LPAR    70
+MINUS    71
+NAME    112
+NUMBER    73
+exp    136
+var    72
+
+
+
+State:   91
+LPAR    63
+MINUS    64
+NAME    67
+NUMBER    66
+exp    137
+var    65
+
+
+
+State:   92
+LPAR    63
+MINUS    64
+NAME    67
+NUMBER    66
+exp    138
+var    65
+
+
+
+State:   93
+LPAR    63
+MINUS    64
+NAME    67
+NUMBER    66
+exp    139
+var    65
+
+
+
+State:   94
+LPAR    63
+MINUS    64
+NAME    67
+NUMBER    66
+exp    140
+var    65
+
+
+
+State:   95
+LPAR    63
+MINUS    64
+NAME    67
+NUMBER    66
+exp    141
+var    65
+
+
+
+State:   96
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+RPAR    142
+TIMES    93
+
+
+
+State:   97
+%prec UMINUS    143
+
+
+
+State:   98
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+RPAR    144
+exp    120
+exp     128
+exps    145
+var    123
+
+
+
+State:   99
+
+
+
+State:   100
+NAME    146
+
+
+
+State:   101
+LPAR    70
+MINUS    71
+NAME    112
+NUMBER    73
+exp    147
+var    72
+
+
+
+State:   102
+LPAR    70
+MINUS    71
+NAME    74
+NUMBER    73
+exp    148
+var    72
+
+
+
+State:   103
+LPAR    70
+MINUS    71
+NAME    74
+NUMBER    73
+exp    149
+var    72
+
+
+
+State:   104
+LPAR    70
+MINUS    71
+NAME    74
+NUMBER    73
+exp    150
+var    72
+
+
+
+State:   105
+LPAR    70
+MINUS    71
+NAME    74
+NUMBER    73
+exp    151
+var    72
+
+
+
+State:   106
+LPAR    70
+MINUS    71
+NAME    74
+NUMBER    73
+exp    152
+var    72
+
+
+
+State:   107
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+RPAR    153
+TIMES    93
+
+
+
+State:   108
+%prec UMINUS    154
+
+
+
+State:   109
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+RPAR    155
+exp    120
+exp     128
+exps    156
+var    123
+
+
+
+State:   110
+
+
+
+State:   111
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+RBRACK    157
+TIMES    104
+
+
+
+State:   112
+LPAR    109
+
+
+
+State:   113
+DIVIDE    81
+DOT    76
+EQUAL    82
+LBRACK    77
+MINUS    79
+PLUS    78
+TIMES    80
+
+
+
+State:   114
+DIVIDE    81
+DOT    76
+EQUAL    82
+LBRACK    77
+MINUS    79
+PLUS    78
+TIMES    80
+
+
+
+State:   115
+DIVIDE    81
+DOT    76
+EQUAL    82
+LBRACK    77
+MINUS    79
+PLUS    78
+TIMES    80
+
+
+
+State:   116
+DIVIDE    81
+DOT    76
+EQUAL    82
+LBRACK    77
+MINUS    79
+PLUS    78
+TIMES    80
+
+
+
+State:   117
+DIVIDE    81
+DOT    76
+EQUAL    82
+LBRACK    77
+MINUS    79
+PLUS    78
+TIMES    80
+
+
+
+State:   118
+
+
+
+State:   119
+
+
+
+State:   120
+COMMA    165
+DIVIDE    163
+DOT    158
+EQUAL    164
+LBRACK    159
+MINUS    161
+PLUS    160
+TIMES    162
+
+
+
+State:   121
+LPAR    63
+MINUS    64
+NAME    84
+NUMBER    66
+exp    166
+var    65
+
+
+
+State:   122
+exp     167
+
+
+
+State:   123
+
+
+
+State:   124
+
+
+
+State:   125
+
+
+
+State:   126
+LPAR    168
+
+
+
+State:   127
+RPAR    169
+
+
+
+State:   128
+
+
+
+State:   129
+FLOAT    7
+INT    6
+STRUCT    8
+type    34
+var_declaration    33
+var_declarations    170
+
+
+
+State:   130
+%prec LOW    171
+ELSE    172
+
+
+
+State:   131
+LPAR    173
+
+
+
+State:   132
+ASSIGN    174
+DOT    52
+LBRACK    51
+
+
+
+State:   133
+LPAR    176
+MINUS    177
+NAME    180
+NUMBER    179
+exp    175
+var    178
+
+
+
+State:   134
+
+
+
+State:   135
+
+
+
+State:   136
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+RBRACK    181
+TIMES    104
+
+
+
+State:   137
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+TIMES    93
+
+
+
+State:   138
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+TIMES    93
+
+
+
+State:   139
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+TIMES    93
+
+
+
+State:   140
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+TIMES    93
+
+
+
+State:   141
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+TIMES    93
+
+
+
+State:   142
+
+
+
+State:   143
+
+
+
+State:   144
+
+
+
+State:   145
+RPAR    182
+
+
+
+State:   146
+
+
+
+State:   147
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+RBRACK    183
+TIMES    104
+
+
+
+State:   148
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+TIMES    104
+
+
+
+State:   149
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+TIMES    104
+
+
+
+State:   150
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+TIMES    104
+
+
+
+State:   151
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+TIMES    104
+
+
+
+State:   152
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+TIMES    104
+
+
+
+State:   153
+
+
+
+State:   154
+
+
+
+State:   155
+
+
+
+State:   156
+RPAR    184
+
+
+
+State:   157
+
+
+
+State:   158
+NAME    185
+
+
+
+State:   159
+LPAR    70
+MINUS    71
+NAME    112
+NUMBER    73
+exp    186
+var    72
+
+
+
+State:   160
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+exp    187
+var    123
+
+
+
+State:   161
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+exp    188
+var    123
+
+
+
+State:   162
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+exp    189
+var    123
+
+
+
+State:   163
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+exp    190
+var    123
+
+
+
+State:   164
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+exp    191
+var    123
+
+
+
+State:   165
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+exp    120
+exp     128
+exps    192
+var    123
+
+
+
+State:   166
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+RPAR    193
+TIMES    93
+
+
+
+State:   167
+%prec UMINUS    194
+
+
+
+State:   168
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+RPAR    195
+exp    120
+exp     128
+exps    196
+var    123
+
+
+
+State:   169
+
+
+
+State:   170
+IF    38
+LBRACE    36
+NAME    43
+RETURN    40
+block    41
+lexp    39
+statement    37
+statements    197
+var    42
+
+
+
+State:   171
+
+
+
+State:   172
+IF    38
+LBRACE    36
+NAME    43
+RETURN    40
+block    41
+lexp    39
+statement    198
+var    42
+
+
+
+State:   173
+LPAR    63
+MINUS    64
+NAME    67
+NUMBER    66
+exp    199
+var    65
+
+
+
+State:   174
+LPAR    176
+MINUS    177
+NAME    180
+NUMBER    179
+exp    200
+var    178
+
+
+
+State:   175
+DIVIDE    206
+DOT    201
+EQUAL    207
+LBRACK    202
+MINUS    204
+PLUS    203
+TIMES    205
+
+
+
+State:   176
+LPAR    63
+MINUS    64
+NAME    84
+NUMBER    66
+exp    208
+var    65
+
+
+
+State:   177
+exp     209
+
+
+
+State:   178
+
+
+
+State:   179
+
+
+
+State:   180
+LPAR    210
+
+
+
+State:   181
+
+
+
+State:   182
+
+
+
+State:   183
+
+
+
+State:   184
+
+
+
+State:   185
+
+
+
+State:   186
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+RBRACK    211
+TIMES    104
+
+
+
+State:   187
+DIVIDE    163
+DOT    158
+EQUAL    164
+LBRACK    159
+MINUS    161
+PLUS    160
+TIMES    162
+
+
+
+State:   188
+DIVIDE    163
+DOT    158
+EQUAL    164
+LBRACK    159
+MINUS    161
+PLUS    160
+TIMES    162
+
+
+
+State:   189
+DIVIDE    163
+DOT    158
+EQUAL    164
+LBRACK    159
+MINUS    161
+PLUS    160
+TIMES    162
+
+
+
+State:   190
+DIVIDE    163
+DOT    158
+EQUAL    164
+LBRACK    159
+MINUS    161
+PLUS    160
+TIMES    162
+
+
+
+State:   191
+DIVIDE    163
+DOT    158
+EQUAL    164
+LBRACK    159
+MINUS    161
+PLUS    160
+TIMES    162
+
+
+
+State:   192
+
+
+
+State:   193
+
+
+
+State:   194
+
+
+
+State:   195
+
+
+
+State:   196
+RPAR    212
+
+
+
+State:   197
+RBRACE    213
+
+
+
+State:   198
+
+
+
+State:   199
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+RPAR    214
+TIMES    93
+
+
+
+State:   200
+DIVIDE    206
+DOT    201
+EQUAL    207
+LBRACK    202
+MINUS    204
+PLUS    203
+TIMES    205
+
+
+
+State:   201
+NAME    215
+
+
+
+State:   202
+LPAR    70
+MINUS    71
+NAME    112
+NUMBER    73
+exp    216
+var    72
+
+
+
+State:   203
+LPAR    176
+MINUS    177
+NAME    180
+NUMBER    179
+exp    217
+var    178
+
+
+
+State:   204
+LPAR    176
+MINUS    177
+NAME    180
+NUMBER    179
+exp    218
+var    178
+
+
+
+State:   205
+LPAR    176
+MINUS    177
+NAME    180
+NUMBER    179
+exp    219
+var    178
+
+
+
+State:   206
+LPAR    176
+MINUS    177
+NAME    180
+NUMBER    179
+exp    220
+var    178
+
+
+
+State:   207
+LPAR    176
+MINUS    177
+NAME    180
+NUMBER    179
+exp    221
+var    178
+
+
+
+State:   208
+DIVIDE    94
+DOT    89
+EQUAL    95
+LBRACK    90
+MINUS    92
+PLUS    91
+RPAR    222
+TIMES    93
+
+
+
+State:   209
+%prec UMINUS    223
+
+
+
+State:   210
+LPAR    121
+MINUS    122
+NAME    126
+NUMBER    124
+RPAR    224
+exp    120
+exp     128
+exps    225
+var    123
+
+
+
+State:   211
+
+
+
+State:   212
+
+
+
+State:   213
+
+
+
+State:   214
+IF    131
+LBRACE    129
+NAME    43
+RETURN    133
+block    134
+lexp    132
+statement    226
+var    42
+
+
+
+State:   215
+
+
+
+State:   216
+DIVIDE    105
+DOT    100
+EQUAL    106
+LBRACK    101
+MINUS    103
+PLUS    102
+RBRACK    227
+TIMES    104
+
+
+
+State:   217
+DIVIDE    206
+DOT    201
+EQUAL    207
+LBRACK    202
+MINUS    204
+PLUS    203
+TIMES    205
+
+
+
+State:   218
+DIVIDE    206
+DOT    201
+EQUAL    207
+LBRACK    202
+MINUS    204
+PLUS    203
+TIMES    205
+
+
+
+State:   219
+DIVIDE    206
+DOT    201
+EQUAL    207
+LBRACK    202
+MINUS    204
+PLUS    203
+TIMES    205
+
+
+
+State:   220
+DIVIDE    206
+DOT    201
+EQUAL    207
+LBRACK    202
+MINUS    204
+PLUS    203
+TIMES    205
+
+
+
+State:   221
+DIVIDE    206
+DOT    201
+EQUAL    207
+LBRACK    202
+MINUS    204
+PLUS    203
+TIMES    205
+
+
+
+State:   222
+
+
+
+State:   223
+
+
+
+State:   224
+
+
+
+State:   225
+RPAR    228
+
+
+
+State:   226
+%prec LOW    229
+ELSE    230
+
+
+
+State:   227
+
+
+
+State:   228
+
+
+
+State:   229
+
+
+
+State:   230
+IF    131
+LBRACE    129
+NAME    43
+RETURN    133
+block    134
+lexp    132
+statement    231
+var    42
+
+
+
+State:   231
 
 
 
