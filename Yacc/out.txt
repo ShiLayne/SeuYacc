@@ -1,0 +1,258 @@
+State:  0
+0	$  
+S -> E	
+0	$  and  or  
+E -> E	and	E	
+0	$  and  or  
+E -> E	or	E	
+0	$  and  or  
+E -> not	E	
+0	$  and  or  
+E -> LPAR	E	RPAR	
+0	$  and  or  
+E -> b	
+
+
+
+State:  1
+1	$  
+S -> E	
+1	$  and  or  
+E -> E	and	E	
+1	$  and  or  
+E -> E	or	E	
+
+
+
+State:  2
+0	$  and  or  
+E -> E	and	E	
+0	$  and  or  
+E -> E	or	E	
+1	$  and  or  
+E -> not	E	
+0	$  and  or  
+E -> not	E	
+0	$  and  or  
+E -> LPAR	E	RPAR	
+0	$  and  or  
+E -> b	
+
+
+
+State:  3
+0	RPAR  and  or  
+E -> E	and	E	
+0	RPAR  and  or  
+E -> E	or	E	
+0	RPAR  and  or  
+E -> not	E	
+1	$  and  or  
+E -> LPAR	E	RPAR	
+0	RPAR  and  or  
+E -> LPAR	E	RPAR	
+0	RPAR  and  or  
+E -> b	
+
+
+
+State:  4
+1	$  and  or  
+E -> b	
+
+
+
+State:  5
+2	$  and  or  
+E -> E	and	E	
+0	$  and  or  
+E -> E	and	E	
+0	$  and  or  
+E -> E	or	E	
+0	$  and  or  
+E -> not	E	
+0	$  and  or  
+E -> LPAR	E	RPAR	
+0	$  and  or  
+E -> b	
+
+
+
+State:  6
+0	$  and  or  
+E -> E	and	E	
+2	$  and  or  
+E -> E	or	E	
+0	$  and  or  
+E -> E	or	E	
+0	$  and  or  
+E -> not	E	
+0	$  and  or  
+E -> LPAR	E	RPAR	
+0	$  and  or  
+E -> b	
+
+
+
+State:  7
+1	$  and  or  
+E -> E	and	E	
+1	$  and  or  
+E -> E	or	E	
+2	$  and  or  
+E -> not	E	
+
+
+
+State:  8
+1	RPAR  and  or  
+E -> E	and	E	
+1	RPAR  and  or  
+E -> E	or	E	
+2	$  and  or  
+E -> LPAR	E	RPAR	
+
+
+
+State:  9
+0	RPAR  and  or  
+E -> E	and	E	
+0	RPAR  and  or  
+E -> E	or	E	
+1	RPAR  and  or  
+E -> not	E	
+0	RPAR  and  or  
+E -> not	E	
+0	RPAR  and  or  
+E -> LPAR	E	RPAR	
+0	RPAR  and  or  
+E -> b	
+
+
+
+State:  10
+0	RPAR  and  or  
+E -> E	and	E	
+0	RPAR  and  or  
+E -> E	or	E	
+0	RPAR  and  or  
+E -> not	E	
+1	RPAR  and  or  
+E -> LPAR	E	RPAR	
+0	RPAR  and  or  
+E -> LPAR	E	RPAR	
+0	RPAR  and  or  
+E -> b	
+
+
+
+State:  11
+1	RPAR  and  or  
+E -> b	
+
+
+
+State:  12
+3	$  and  or  
+E -> E	and	E	
+1	$  and  or  
+E -> E	and	E	
+1	$  and  or  
+E -> E	or	E	
+
+
+
+State:  13
+1	$  and  or  
+E -> E	and	E	
+3	$  and  or  
+E -> E	or	E	
+1	$  and  or  
+E -> E	or	E	
+
+
+
+State:  14
+2	RPAR  and  or  
+E -> E	and	E	
+0	RPAR  and  or  
+E -> E	and	E	
+0	RPAR  and  or  
+E -> E	or	E	
+0	RPAR  and  or  
+E -> not	E	
+0	RPAR  and  or  
+E -> LPAR	E	RPAR	
+0	RPAR  and  or  
+E -> b	
+
+
+
+State:  15
+0	RPAR  and  or  
+E -> E	and	E	
+2	RPAR  and  or  
+E -> E	or	E	
+0	RPAR  and  or  
+E -> E	or	E	
+0	RPAR  and  or  
+E -> not	E	
+0	RPAR  and  or  
+E -> LPAR	E	RPAR	
+0	RPAR  and  or  
+E -> b	
+
+
+
+State:  16
+3	$  and  or  
+E -> LPAR	E	RPAR	
+
+
+
+State:  17
+1	RPAR  and  or  
+E -> E	and	E	
+1	RPAR  and  or  
+E -> E	or	E	
+2	RPAR  and  or  
+E -> not	E	
+
+
+
+State:  18
+1	RPAR  and  or  
+E -> E	and	E	
+1	RPAR  and  or  
+E -> E	or	E	
+2	RPAR  and  or  
+E -> LPAR	E	RPAR	
+
+
+
+State:  19
+3	RPAR  and  or  
+E -> E	and	E	
+1	RPAR  and  or  
+E -> E	and	E	
+1	RPAR  and  or  
+E -> E	or	E	
+
+
+
+State:  20
+1	RPAR  and  or  
+E -> E	and	E	
+3	RPAR  and  or  
+E -> E	or	E	
+1	RPAR  and  or  
+E -> E	or	E	
+
+
+
+State:  21
+3	RPAR  and  or  
+E -> LPAR	E	RPAR	
+
+
+

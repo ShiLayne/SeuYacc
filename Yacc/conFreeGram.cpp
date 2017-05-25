@@ -22,12 +22,19 @@ conFreeGram::conFreeGram(string readL, string readR, int Num)
 		}
 		else//找到第一个空格，将字符串以此空格为界限分开
 		{
-			right.push_back(readR.substr(0, offset));
+			string s = readR.substr(0, offset);
+			if (s[0] != '\0'&&s[0]!='{')
+			{
+				right.push_back(s);
+			}
 			while (readR[offset] == '\t') offset++;
 			readR = readR.substr(offset, readR.length() - offset);
 		}
 	}
-	right.push_back(readR);
+	if (readR[0]!='\0'&&readR[0]!='{')//判断empty或者注释传入“”的情况
+	{
+		right.push_back(readR);
+	}
 }
 
 string conFreeGram::getLeft()

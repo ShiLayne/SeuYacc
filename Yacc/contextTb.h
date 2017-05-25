@@ -15,7 +15,7 @@ private:
 	map<string, int>			nonAsso;
 	map<string, int>			leftAsso;
 private:
-	vector<string> getFirst4Update(string);	//更新FirstMap时使用的getFirst
+	vector<string> getFirst4Update(string,vector<string> set);	//更新FirstMap时使用的getFirst
 public:
 	vector<conFreeGram>			S;				//文法最高层
 	map<string, vector<int>>		exprMap;	//string在Left的表达式序号集合
@@ -24,6 +24,7 @@ public:
 	contextTb();
 	contextTb(vector<string> tokens);
 	conFreeGram get(int id);							//获取规约规则
+	vector<conFreeGram> getTable();
 	vector<string> getTokenTbl();
 	vector<string> getExprTbl();
 	vector<string> getFisrt(string);				//FirstMap外部接口

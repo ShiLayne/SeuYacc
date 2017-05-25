@@ -1,5 +1,6 @@
 #include "LrTable.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 LrTable::LrTable(contextTb conTb)
 {
@@ -7,8 +8,26 @@ LrTable::LrTable(contextTb conTb)
 	LRTbl.push_back(LrState(conTb.S, conTb));
 	map<string, int> jumpM;
 	int maxID = 1;
+	ofstream SaveFile("out.txt");
+	ofstream SaveFile2("jumpout.txt");
+	SaveFile.clear();
+	SaveFile2.clear();
 	for (int i = 0; i < LRTbl.size(); i++)//LRTbl在循环中size也在不断的更新
 	{
+		SaveFile << "State:  " << i << endl;
+
+		for (int j = 0; j < LRTbl[i].context.size(); j++)
+		{
+			SaveFile<< LRTbl[i].Dot[j] << '\t';
+			for (int k = 0; k < LRTbl[i].Follow[j].size(); k++)
+				SaveFile << LRTbl[i].Follow[j][k] << "  ";
+			SaveFile << endl;
+			SaveFile << LRTbl[i].context[j] << endl;
+		}
+		SaveFile << endl;
+		SaveFile << endl;
+		SaveFile << endl;
+
 		jumpM.clear();
 		//广度优先遍历
 		for (int j = 0; j < LRTbl[i].StateNext.size(); j++)
@@ -34,7 +53,19 @@ LrTable::LrTable(contextTb conTb)
 		}
 		jumpMap.push_back(jumpM);
 	}
+	SaveFile.close();
 	createActGoto();
+	map<string, int>::iterator it;
+	for (int i = 0; i < jumpMap.size();i++)
+	{
+		SaveFile2 << "State:   " << i << endl;
+		for (it = jumpMap[i].begin(); it != jumpMap[i].end(); it++)
+		{
+			SaveFile2 << (*it).first << "    " << (*it).second<<endl;
+		}
+		SaveFile2 << endl << endl << endl;
+	}
+	SaveFile2.close();
 }
 
 void LrTable::createActGoto()

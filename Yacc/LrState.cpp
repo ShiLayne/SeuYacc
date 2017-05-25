@@ -26,7 +26,7 @@ LrState::LrState(LrState s, string input, contextTb tb)
 				{
 					string Left = context[i].getRight()[Dot[i]];				//Left是当前Dot后的字符串
 					vector<string> follow, insertF, newF;
-					bool EmptyFlag = true;
+					bool EmptyFlag = false;
 					for (int j = Dot[i] + 1; j < context[i].getRight().size(); j++)
 					{
 						newF.clear();
@@ -39,12 +39,13 @@ LrState::LrState(LrState s, string input, contextTb tb)
 							vector<string>::iterator it = find(follow.begin(), follow.end(), epsilon);
 							if (it != follow.end())
 								follow.erase(it);
-							EmptyFlag = true;
+							EmptyFlag = false;
 							break;
 						}
-						EmptyFlag = false;
+						if (j == context[i].getRight().size() - 1)
+							EmptyFlag = true;
 					}
-					if (EmptyFlag)
+					if (EmptyFlag|| context[i].getRight().size()<=Dot[i] + 1)//包含了 Follow包含epsilon，最后一个，空规则
 					{
 						newF.clear();
 						insertF = Follow[i];
@@ -121,11 +122,11 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 		size = context.size();
 		for (int i = 0; i < context.size(); i++)
 		{
-			if (extend[i] == 0)
+			if (extend[i] == 0&& context[i].getRight().size()!=0)
 			{
 				string Left = context[i].getRight()[Dot[i]];
 				vector<string> follow,insertF,newF;
-				bool EmptyFlag = true;
+				bool EmptyFlag = false;
 				for (int j = Dot[i] + 1; j < context[i].getRight().size(); j++)
 				{
 					newF.clear();
@@ -138,12 +139,13 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 						vector<string>::iterator it = find(follow.begin(), follow.end(), epsilon);
 						if (it != follow.end())
 							follow.erase(it);
-						EmptyFlag = true;
+						EmptyFlag = false;
 						break;
 					}
-					EmptyFlag = false;
+					if (j == context[i].getRight().size() - 1)
+						EmptyFlag = true;
 				}
-				if (EmptyFlag)
+				if (EmptyFlag || context[i].getRight().size() <= Dot[i] + 1)//包含了 Follow包含epsilon，最后一个，空规则
 				{
 					newF.clear();
 					insertF = Follow[i];
@@ -151,10 +153,6 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 					sort(newF.begin(), newF.end());
 					follow = newF;
 				}
-				/*if (context[i].getRight().size() - 1 > Dot[i])
-					follow = tb.getFisrt(context[i].getRight()[Dot[i] + 1]);
-				else
-					follow.push_back(terminal);*/
 				//如果不是token
 				if (tb.judgeTorE(Left) == 1)
 				{
@@ -187,6 +185,8 @@ LrState::LrState(vector<conFreeGram> con, contextTb tb)
 				}
 				extend[i] = 1;
 			}
+			else if(context[i].getRight().size() == 0)
+				extend[i] = 1;
 		}
 	}
 	updateNext(tb);
@@ -251,7 +251,7 @@ bool operator==(const LrState &l, const LrState &r)
 	if (l.context.size() != r.context.size())
 		return false;
 	bool flag = true;
-	for (int i = 0; i <min( l.context.size(),r.context.size()); i++)
+	for (int i = 0; i < l.context.size(); i++)
 	{
 		if (l.Dot[i] == r.Dot[i] && l.context[i] == r.context[i] );
 		else

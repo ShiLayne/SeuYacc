@@ -15,46 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="conFreeGram.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LrState.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="contextTb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LrTable.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Analysis.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="InputFileProcess.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="conFreeGram.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="contextTb.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LrState.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LrTable.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Analysis.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="SeuYacc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="InputFileProcess.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Yacc\conFreeGram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Yacc\contextTb.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InputFileProcess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Yacc\conFreeGram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Yacc\contextTb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

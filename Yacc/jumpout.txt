@@ -1,0 +1,144 @@
+State:   0
+E    1
+LPAR    3
+b    4
+not    2
+
+
+
+State:   1
+and    5
+or    6
+
+
+
+State:   2
+E    7
+LPAR    3
+b    4
+not    2
+
+
+
+State:   3
+E    8
+LPAR    10
+b    11
+not    9
+
+
+
+State:   4
+
+
+
+State:   5
+E    12
+LPAR    3
+b    4
+not    2
+
+
+
+State:   6
+E    13
+LPAR    3
+b    4
+not    2
+
+
+
+State:   7
+and    5
+or    6
+
+
+
+State:   8
+RPAR    16
+and    14
+or    15
+
+
+
+State:   9
+E    17
+LPAR    10
+b    11
+not    9
+
+
+
+State:   10
+E    18
+LPAR    10
+b    11
+not    9
+
+
+
+State:   11
+
+
+
+State:   12
+and    5
+or    6
+
+
+
+State:   13
+and    5
+or    6
+
+
+
+State:   14
+E    19
+LPAR    10
+b    11
+not    9
+
+
+
+State:   15
+E    20
+LPAR    10
+b    11
+not    9
+
+
+
+State:   16
+
+
+
+State:   17
+and    14
+or    15
+
+
+
+State:   18
+RPAR    21
+and    14
+or    15
+
+
+
+State:   19
+and    14
+or    15
+
+
+
+State:   20
+and    14
+or    15
+
+
+
+State:   21
+
+
+
