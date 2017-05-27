@@ -251,7 +251,7 @@ contextTb InputFileProcess::RuleProcess()//规则处理部分处理函数
 				while (temp[offset] == '\t') offset--;
 				while (temp[i] == '\t') i++;
 				t = temp.substr(0, offset + 1);//t为temp当前第一个‘|’符号前面的字符串
-				temp = temp.substr(i, temp.length() - 1 - i);//新temp为旧temp当前第一个‘|’符号后面的字符串
+				temp = temp.substr(i, temp.length() - i);//新temp为旧temp当前第一个‘|’符号后面的字符串
 			    //处理t
 				conTb.insert(left, t);
 				turn--;//‘|’数量-1
@@ -293,7 +293,7 @@ contextTb InputFileProcess::RuleProcess()//规则处理部分处理函数
 		while (temp[offset] == '\t') offset--;
 		while (temp[i] == '\t') i++;
 		t = temp.substr(0, offset + 1);
-		temp = temp.substr(i, temp.length() - 1 - i);
+		temp = temp.substr(i, temp.length() - i);
 		//处理t
 		conTb.insert(left, t);
 		turn--;
